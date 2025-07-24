@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Document</title>
+</head>
+<body>
+  
+  <nav class="navbar fixed-top navbar-light">
+    <ul>
+      <li><a><img class="logo" src="cog.png"/></a></li>
+      <li class="nav"><a href="#">Home</a></li>
+      <li class="nav"><a href="#services">Services</a></li>
+      <li class="nav"><a href="#about">About us</a></li>
+      <li class="nav"><a href="#contact">Contact Us</a></li>
+    </ul>
+    <ul>
+      <li> <button (click)="gotologin()" class="log"><i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;Login</button></li>
+      <li><button (click)="gotoregister()"class="log"><i class="fas fa-user-plus"></i>&nbsp;&nbsp;Register</button></li>
+    </ul>
+  </nav>
+  
+  <div style="background: linear-gradient(to right, #007bff, #343a40);">
+  
+  <div class="content">
+    <div class="left-column">
+      <h2>Employee Management System</h2>
+      <br>
+      
+      <p style="text-align: justify;width: 350px;">
+        Track project timelines with ease—log start/end times, assign tasks, and print detailed records.
+        Empower your team with clear accountability and streamlined project management.    
+      </p>
+      <br><br>
+      <button (click)="gotologin()" class="btn btn-primary bg-white text-black">Start</button>
+    </div>
+    <div class="right-column">
+      <img src="landimg.webp" alt="Handshake over desk" />
+      <!-- <p class="caption">A Case study of Foundation Polytechnic, Ikot Ekpene</p> -->
+    </div>
+  </div>
+  <br><br><br><br><br><br>
+  <section id="services">
+    <h2>Services</h2><br>
+    <p>Our Employee Management System provides the following core services:</p><br><br>
+    <div class="card mb-3" style="max-width: 800px;background: linear-gradient(to right, #007bff, #343a40);" id="abc">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="office.jpg" height="200px" width="200px" class="img1"/>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">1. Employee Information Management</h5>
+            <p class="card-text">Store and manage key employee data such as name, ID, contact information, designation, department, and joining date.<br></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="card mb-3" style="max-width: 800px;margin-left: 35%;background: linear-gradient(to right, #007bff, #343a40);" id="abc">
+      <div class="row g-0">
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">2. Project Assignment Tracking</h5>
+            <p class="card-text">Maintain records of project details and associate employees with their respective projects, including project name, description, start and end dates.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <img src="img2.jpg" height="200px" width="200px" class="img1"/>
+        </div>
+      </div>
+      
+    </div>
+    <br>
+    <div class="card mb-3" style="max-width: 800px;background: linear-gradient(to right, #007bff, #343a40);" id="abc">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="img3.webp" height="200px" width="200px" class="img1"/>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">3. Data Organization</h5>
+            <p class="card-text">Ensure structured storage and easy retrieval of employee and project data for efficient HR or admin use.<br></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card mb-3" style="max-width: 800px;margin-left: 35%;background: linear-gradient(to right, #007bff, #343a40);" id="abc">
+      <div class="row g-0">
+        
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">4. Basic Search and Filter Options</h5>
+            <p class="card-text">Quickly find employee or project details using search or filter options based on name, ID, or department.<br></p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <img src="office.jpg" height="200px" width="200px" class="img1"/>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br><br><br>
+  <section id="about">
+    <h2>About Us</h2><br>
+    <div style="margin-left: 3%;margin-right: 7%;text-align: justify;">
+    <p>
+      We are a team of passionate developers dedicated to creating smart and efficient solutions to improve workplace management. Our project, Employee Management System, is designed to streamline the process of managing employee data within an organization.</p><br>
+
+<p>This system helps HR teams and management to easily store, update, and access employee information, track attendance, manage roles, handle leaves, and generate reports—all in one centralized platform.</p><br>
+ 
+<p>By automating routine tasks and reducing manual errors, our goal is to enhance productivity, improve transparency, and support better decision-making in any organization.</p><br>
+ 
+<p>This project reflects our commitment to using technology to solve real-world problems in a user-friendly and reliable way.
+  
+    </p>
+  </div>
+    </section>
+    <br><br>
+  <section id="contact" class="content">
+  <div class="contact-us">
+    <h1>Contact Us</h1>
+    <div class="contact-info">
+      <p><i class="fa fa-phone"></i> Phone: +123-456-7890</p>
+      <p><i class="fa fa-envelope"></i> Email: hello&#64;reallygreatsite.com</p>
+      <p><i class="fa fa-map-marker"></i> Address: 123 Anywhere St., Any City</p>
+    </div>
+  </div>
+  
+  </section>
+  
+  <div class="footer row">
+    <div class="col-md-12">
+        <footer class="footer text-center" style="width: 100%;">
+            <div class="container">
+                <p>Copyright &copy; 2025. All rights reserved.</p>
+                <p>Designed with by Shaik Amoon Tabassum, Ishita Nigam, Subhangi Ray</p>
+            </div>
+        </footer>
+    </div>
+  </div>   
+</div>
+</body>
+</html>
+
+
+
+  
+
+  

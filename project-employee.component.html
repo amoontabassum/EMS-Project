@@ -1,0 +1,68 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header bg-warning">
+          <h5>Project Employee Records</h5>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered table-striped text-center">
+            <thead class="table-secondary">
+              <tr>
+                <th>Emp Project ID</th>
+                <th>Client</th>
+                <th>Employee Name</th>
+                <th>Contact</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Assigned Date</th>
+                <th>Role</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let emp of matchedRecords; let i = index">
+                <td>{{ emp.empProjectId }}</td>
+                <td>{{ emp.client }}</td>
+                <td>{{ emp.empname }}</td>
+                <td>{{ emp.contact }}</td>
+                <td>{{ emp.email }}</td>
+                <td>{{ emp.department }}</td>
+                <td>{{ emp.assignedDate }}</td>
+                <td>{{ emp.role }}</td>
+              </tr>
+            
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 mt-3">
+      <div class="card">
+        <div class="card-header bg-warning">
+          <h5>Project Employee List</h5>
+        </div>
+        <div class="card-body">
+          <div class="row mb-4">
+            <div class="col-md-6">
+              <label for="client" class="form-label">Client</label>
+              <select class="form-control" [(ngModel)]="selectedClient" (change)="onClientChange()">
+                <option value="">Select Client</option>
+                <option *ngFor="let client of uniqueClients" [value]="client">{{ client }}</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="empname" class="form-label">Employee Name</label>
+              <select class="form-control" [(ngModel)]="selectedEmployee">
+                <option value="">Select Employee</option>
+                <option *ngFor="let emp of filteredEmployees" [value]="emp.name">{{ emp.name }}</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn btn-success" (click)="filterRecords()">Submit</button>
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+</div>

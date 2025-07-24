@@ -1,0 +1,82 @@
+<div class="container-fluid"
+     style="background: linear-gradient(to right, #007bff, #343a40);background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 100vh;">
+  <div class="text-center mb-5 pt-5">
+    <h1 class="display-5 fw-bold text-white" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.6); margin-top: 30px;">
+      Welcome to the Employee Management System
+    </h1>
+    <p class="lead text-white mt-4" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
+      Manage employee details, project information and assignments with ease.
+    </p>
+  </div>
+  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="office.jpg" class="d-block w-100" alt="loading...">
+      </div>
+      <div class="carousel-item">
+        <img src="Project2.jpg" class="d-block w-100" alt="loading...">
+      </div>
+      <div class="carousel-item">
+        <img src="Project3.jpeg" class="d-block w-100" alt="loading...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <div class="row justify-content-center g-4 px-4 mt-4">
+    
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card h-100 custom-card">
+        <div class="card-body text-center p-4">
+          <i class="bi bi-person-lines-fill display-4 text-primary mb-3"></i>
+          <h5 class="card-title fw-semibold ">Employee Management</h5>
+          <p class="card-text">
+            Seamlessly manage employee records including personal details, job roles, departments, and contact information.
+            Easily onboard new employees, update existing profiles, and maintain a centralized employee database.
+            Ensure data accuracy and quick access for HR and team leads.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card h-100 custom-card">
+        <div class="card-body text-center p-4">
+          <i class="bi bi-building display-4 text-success mb-3"></i>
+          <h5 class="card-title fw-semibold">Project Management</h5>
+          <p class="card-text">
+            Create and manage projects with detailed information including client names, timelines, and assigned leads.
+            Track progress, update milestones, and ensure timely delivery with streamlined project workflows.
+            Collaborate across departments and maintain transparency in execution.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card h-100 custom-card">
+        <div class="card-body text-center p-4">
+          <i class="bi bi-bar-chart-line-fill display-4 text-warning mb-3"></i>
+          <h5 class="card-title fw-semibold">Project Assignment</h5>
+          <p class="card-text">
+            Assign employees to projects based on skills and availability. Monitor workloads and optimize resource allocation.
+            View assignment history, manage team compositions, and ensure balanced distribution of responsibilities.
+            Improve productivity and project outcomes through smart assignment strategies.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<router-outlet></router-outlet>

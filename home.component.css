@@ -1,0 +1,36 @@
+.custom-card {
+    border: none;
+    border-radius: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.9);
+    min-height: 250px;
+  }
+  
+  .custom-card:hover {
+    background-color: #000;
+    color: #fff;
+    transform: translateY(-10px);
+  }
+  
+  .custom-card:hover i {
+    color: #fff !important;
+  }
+  
+  .custom-card:hover .card-title,
+  .custom-card:hover .card-text {
+    color: #fff;
+  }
+  @media (max-width: 768px) {
+    .pt-5 {
+      padding-top: 3rem !important;
+    }
+  } 
+.carousel-wrapper{
+    width: 50%; 
+    max-height: 400px;
+}
+   .carousel-inner img {
+    height: 400px; 
+    object-fit: cover;
+  }
+  

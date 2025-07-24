@@ -1,0 +1,53 @@
+<div class="container-fluid vh-100 d-flex align-items-center justify-content-center" 
+     style="background: linear-gradient(to right, #007bff, #343a40); background-size: cover;">
+  <div class="ms-5 p-4 bg-white border border-primary rounded-5 shadow-lg" style="background: linear-gradient(to left,#2a5298,#a1c4fd);max-width: 550px; width: 100%;">
+    <h1 class="text-center text-black mb-4">REGISTER FORM</h1>
+    <form #registerForm="ngForm">
+      <div class="mb-3">
+        <label for="username" class="form-label" style="font-weight: bold;">USERNAME:</label>
+        <input type="text" class="form-control" [(ngModel)]="user.username" required #username="ngModel" minlength="6" name="username">
+        <div *ngIf="username.touched && username.invalid" class="text-danger small mt-1">
+          <span *ngIf="username.errors?.['required']">*Username is Required</span>
+          <span *ngIf="username.errors?.['minlength']">*Minimum length is 6</span>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label"  style="font-weight: bold;">EMAIL:</label>
+        <input type="email" class="form-control" [(ngModel)]="user.email" required #email="ngModel" name="email">
+        <div *ngIf="email.touched && email.invalid" class="text-danger small mt-1">
+          <span *ngIf="email.errors?.['required']">*Email is Required</span>
+          <span *ngIf="email.errors?.['email']">*Invalid Email Format</span>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label"  style="font-weight: bold;">PASSWORD:</label>
+        <input type="password" class="form-control" [(ngModel)]="user.password" required #password="ngModel" minlength="8" name="password">
+        <div *ngIf="password.touched && password.invalid" class="text-danger small mt-1">
+          <span *ngIf="password.errors?.['required']">*Password is Required</span>
+          <span *ngIf="password.errors?.['minlength']">*Minimum length is 8</span>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="confirmPassword" class="form-label"  style="font-weight: bold;">CONFIRM PASSWORD:</label>
+        <input type="password" class="form-control" [(ngModel)]="user.confirmPassword" required #confirmPassword="ngModel" name="confirmPassword">
+        <div *ngIf="confirmPassword.touched && confirmPassword.invalid || (user.password !== user.confirmPassword && registerForm.submitted)" class="text-danger small mt-1">
+          <span *ngIf="confirmPassword.errors?.['required']">*Confirm Password is Required</span>
+          <span *ngIf="user.password !== user.confirmPassword && registerForm.submitted">*Passwords do not match</span>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <input type="submit" value="REGISTER" (click)="registerUser(registerForm)" class="btn btn-primary w-100">
+      </div>
+    </form>
+
+    <hr />
+    <div *ngIf="msg" class="alert mt-2 text-center" [ngClass]="{'alert-success': msgColor === 'green', 'alert-danger': msgColor === 'red'}">
+      {{msg}}
+    </div>
+  </div>
+</div>
+

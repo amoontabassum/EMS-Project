@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-12">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color:#273F4F; height:70px">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold" routerLink="/home">
+          <img src="/cog.png" style="height:70px;width:70px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" routerLink="/home" style="font-size: 20px;">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" routerLink="/home/employee" style="font-size: 20px;">Employees</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" routerLink="/home/project" style="font-size: 20px;">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" routerLink="/home/project-employee" style="font-size: 20px;">Project Employee</a>
+            </li>
+          </ul>
+          <form class="d-flex align-items-center">
+            <span class="navbar-text text-white me-3" style="font-size: 18px;">
+              Welcome, {{ username }}
+            </span>
+            <button class="ms-3 btn btn-outline-light" (click)="logout()" type="button">Log Out</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>

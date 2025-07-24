@@ -1,0 +1,19 @@
+
+:host {
+    display: block;
+    margin-top: auto;
+  }
+   
+  .footer {
+    background-color:#273F4F;
+    color: #fff;
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+    position:static;
+  }
+
+.footer p {
+    margin-bottom: 0;
+} 
+ 

@@ -1,0 +1,87 @@
+<div class="container-fluid">
+  <div class="row mt-5">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header bg-warning text-black p-2 d-flex justify-content-between align-items-center">
+          <strong>Project List</strong>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered table-striped text-center">
+            <thead class="table-secondary">
+              <tr>
+                <!-- <th>Project ID</th> -->
+                <th>Project Name</th>
+                <th>Client Name</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Lead By Employee</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let project of projects">
+                <!-- <td>{{ project.id }}</td> -->
+                <td>{{ project.name }}</td>
+                <td>{{ project.client }}</td>
+                <td>{{ project.date }}</td>
+                <td>{{ project.endDate }}</td>
+                <td>{{ project.lead }}</td>
+                <td>
+                  <button class="btn btn-sm btn-warning me-2" (click)="editProject(project)">Edit</button>
+                  <button class="btn btn-sm btn-danger" (click)="deleteProject(project)">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div> 
+      </div>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header bg-warning text-black p-2 d-flex justify-content-between align-items-center">
+          <strong>{{ isEditing ? 'Edit Project' : 'New Project' }}</strong>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="saveProject()" #projectForm="ngForm">
+            <div class="row mb-4">
+              <div class="col-md-6">
+                <label>Project Name</label>
+                <input type="text" class="form-control" [(ngModel)]="projectName" name="projectName" required placeholder="Enter project name" />
+              </div>           
+              <div class="col-md-6">
+                <label>Client Name</label>
+                <input type="text" class="form-control" [(ngModel)]="clientName" name="clientName" required placeholder="Enter client name" />
+              </div>
+              <div class="col-md-6">
+                <label>Start Date</label>
+                <input type="date" class="form-control" [(ngModel)]="startDate" name="startDate" required />
+              </div>
+              <div class="col-md-6">
+                <label>End Date</label>
+                <input type="date" class="form-control" [(ngModel)]="endDate" name="endDate" required placeholder="Enter project end date" />
+                <div *ngIf="startDate && endDate && endDate < startDate" class="text-danger mt-2">
+                  End Date cannot be earlier than Start Date.
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label>Lead By</label>
+                <select class="form-control" [(ngModel)]="leadBy" name="leadBy" required>
+                  <option value="" disabled selected>Select Employee</option>
+                  <option *ngFor="let emp of employees" [value]="emp.name">{{ emp.name }}</option>
+                </select>
+              </div>   
+              <div class="col-md-3 mt-3">
+                <button type="submit" class="btn btn-success" [disabled]="projectForm.invalid || (endDate < startDate)">
+                  {{ isEditing ? 'Update Project' : 'Save Project' }}
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> 
+</div>
+ 

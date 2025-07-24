@@ -1,0 +1,183 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header bg-warning">
+          <div class="row">
+            <div class="col-6 text-black">
+              <strong>Employee Portal</strong>
+            </div>
+            
+          </div>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered table-striped text-center">
+            <thead class="table-secondary">
+              <tr>
+             
+                <th>Name</th>
+                <th>Contact</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Role</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let emp of employees; let i = index">
+          
+                <td>{{ emp.name }}</td>
+                <td>{{ emp.contact }}</td>
+                <td>{{ emp.email }}</td>
+                <td>{{ emp.department }}</td>
+                <td>{{ emp.role }}</td>
+                <td>
+                  <button class="btn btn-warning btn-sm me-2" (click)="editEmployee(emp)">Edit</button>
+                  <button class="btn btn-danger btn-sm" (click)="deleteEmployee(emp.id!)">Delete</button>
+                </td>
+              </tr>
+             
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 mt-3">
+      <div class="card">
+        <div class="card-header bg-warning">
+          <div class="row">
+            <div class="col-6 text-black">
+              <strong>New Employee</strong>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="card-body">
+ 
+          <form class="mb-4" #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)" novalidate>
+            <div class="row">
+              <div class="col-md-6">
+                <label for="employeeName" class="form-label">Employee Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="employeeName"
+                  placeholder="Enter employee name"
+                  [(ngModel)]="employee.name"
+                  name="name"
+                  required
+                  #name="ngModel" />
+                <div *ngIf="name.invalid && name.touched" class="text-danger">
+                  Please enter employee name.
+                </div>
+              </div>
+          
+              <div class="col-md-6">
+                <label for="contactNo" class="form-label">Contact No</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="contactNo"
+                  placeholder="Enter contact number"
+                  [(ngModel)]="employee.contact"
+                  name="contact"
+                  required
+                  pattern="^[6-9][0-9]{9}$"
+                  #contact="ngModel" />
+                <div *ngIf="contact.errors?.['required'] && contact.touched" class="text-danger">
+                  Please enter contact number.
+                </div>
+                <div *ngIf="contact.errors?.['pattern'] && contact.touched" class="text-danger">
+                  Contact number must be 10 digits and start with 6, 7, 8, or 9.
+                </div>
+              </div>
+            </div>
+          
+            <div class="row mt-3">
+              <div class="col-md-6">
+                <label for="emailId" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="emailId"
+                  placeholder="Enter email"
+                  [(ngModel)]="employee.email"
+                  name="email"
+                  required
+                  email
+                  #email="ngModel" />
+                <div *ngIf="email.errors?.['required'] && email.touched" class="text-danger">
+                  Please enter email.
+                </div>
+                <div *ngIf="email.errors?.['email'] && email.touched" class="text-danger">
+                  Please enter a valid email address.
+                </div>
+              </div>
+          
+              <div class="col-md-6">
+                <label for="deptId" class="form-label">Department</label>
+                <select
+                  id="deptId"
+                  class="form-select"
+                  [(ngModel)]="employee.department"
+                  name="department"
+                  required
+                  #department="ngModel">
+                  <option value="" disabled selected>--Select Department--</option>
+                  <option>Development</option>
+                  <option>Marketing</option>
+                  <option>Human Resources</option>
+                </select>
+                <div *ngIf="department.invalid && department.touched" class="text-danger">
+                  Please select a department.
+                </div>
+              </div>
+            </div>
+          
+            <div class="row mt-3">
+              <div class="col-md-6">
+                <label for="password" class="form-label">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  placeholder="Enter password"
+                  [(ngModel)]="employee.password"
+                  name="password"
+                  required
+                  #password="ngModel" />
+                <div *ngIf="password.invalid && password.touched" class="text-danger">
+                  Please enter password.
+                </div>
+              </div>
+          
+              <div class="col-md-6">
+                <label for="role" class="form-label">Role</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  [(ngModel)]="employee.role"
+                  name="role"
+                  required
+                  #role="ngModel" />
+                <div *ngIf="role.invalid && role.touched" class="text-danger">
+                  Please enter role.
+                </div>
+              </div>
+            </div>
+          
+            <div class="mt-4">
+              <button type="submit" class="btn btn-success mt-3" [disabled]="employeeForm.invalid">
+                {{ isEditing ? 'Save' : 'Submit' }}
+              </button>
+              <button type="button" class="btn btn-secondary ms-2 mt-3" (click)="resetForm(employeeForm)">Clear</button>
+            </div>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
