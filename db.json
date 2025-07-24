@@ -1,0 +1,29 @@
+{
+  "employees": [
+    {
+      "id": "ed5b",
+      "name": "ishita",
+      "contact": "9555938647",
+      "email": "ishita.nigam@cognizant.com",
+      "department": "Development",
+      "password": "sdjhdhsd",
+      "role": "hello"
+    }
+    
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin12",
+      "email": "admin@example.com",
+      "password": "admin123"
+    }
+   
+  ],
+  [
+    { "id": 1, "name": "Alice Johnson" },
+    { "id": 2, "name": "Bob Smith" },
+    { "id": 3, "name": "Charlie Davis" }
+  ]
+  
+}
